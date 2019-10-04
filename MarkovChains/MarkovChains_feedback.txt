@@ -1,0 +1,63 @@
+11/02/18 17:25
+
+markov_chains.py has not been modified yet
+
+-------------------------------------------------------------------------------
+
+11/05/18 17:27
+
+markov_chains.py has not been modified yet
+
+-------------------------------------------------------------------------------
+
+11/07/18 15:30
+
+Problem 1 (5 points):
+Score += 5
+
+Problem 2 (5 points):
+Score += 5
+
+Problem 3 (5 points):
+Score += 5
+
+Problem 4 (10 points):
+Score += 10
+
+SentenceGenerator (20 points):
+NotImplementedError: Problem 6 Incomplete
+
+Code Quality (5 points):
+Add comments
+Score += 0
+
+Total score: 25/50 = 50.0%
+
+-------------------------------------------------------------------------------
+
+11/08/18 10:53
+
+Problem 1 (5 points):
+Score += 5
+
+Problem 2 (5 points):
+Score += 5
+
+Problem 3 (5 points):
+Score += 5
+
+Problem 4 (10 points):
+Score += 10
+
+SentenceGenerator (20 points):
+Score += 20
+
+Code Quality (5 points):
+Score += 5
+
+Total score: 50/50 = 100.0%
+
+Excellent!
+
+-------------------------------------------------------------------------------
+
