@@ -1,7 +1,6 @@
 # nearest_neighbor.py
-"""Volume 2: Nearest Neighbor Search.
+"""Nearest Neighbor Search.
 <Neal Munson>
-<Section 2>
 <10/24/2018>
 
 """
@@ -12,9 +11,8 @@ from scipy.spatial import KDTree as skdt
 from scipy import stats as st
 from matplotlib import pyplot as plt
 
-# Problem 1
 def exhaustive_search(X, z):
-    """Solve the nearest neighbor search problem with an exhaustive search.
+    """Solves the nearest neighbor search problem with an exhaustive search.
 
     Parameters:
         X ((m,k) ndarray): a training set of m k-dimensional points.
@@ -29,10 +27,8 @@ def exhaustive_search(X, z):
     # dist represents the distance from vect to z
     dist = la.norm(X[vect] - z)
     return X[vect], dist
-    raise NotImplementedError("Problem 1 Incomplete")
 
 
-# Problem 2: Write a KDTNode class.
 class KDTNode:
     """A node class for k-d trees. Contains an array value, a
     reference to the pivot value, and references to two child nodes.
@@ -48,7 +44,6 @@ class KDTNode:
         self.left = None        # self.left.value @ pivot < self.value @ pivot
         self.right = None       # self.value @ pivot < self.right.value @ pivot
 
-# Problems 3 and 4
 class KDT:
     """A k-dimensional binary tree for solving the nearest neighbor problem.
 
@@ -82,7 +77,6 @@ class KDT:
         # Start the recursive search at the root of the tree.
         return _step(self.root)
 
-    # Problem 3
     def insert(self, data):
         """Insert a new node containing the specified data.
 
@@ -141,9 +135,7 @@ class KDT:
             n.pivot = parent.pivot + 1
         return
 
-        raise NotImplementedError("Problem 3 Incomplete")
 
-    # Problem 4
     def query(self, z):
         """Find the value in the tree that is nearest to z.
 
@@ -176,7 +168,6 @@ class KDT:
         node, d = KDSearch(self.root, self.root, la.norm(self.root.value-z) )
         return node.value, d
 
-        raise NotImplementedError("Problem 4 Incomplete")
 
     def __str__(self):
         """String representation: a hierarchical list of nodes and their axes.
@@ -200,7 +191,6 @@ class KDT:
         return "KDT(k={})\n".format(self.k) + "\n".join(strs)
 
 
-# Problem 5: Write a KNeighborsClassifier class.
 class KNeighborsClassifier:
     """A k-Neighbors classifier for solving nearest neighbor problems.
 
@@ -237,7 +227,6 @@ class KNeighborsClassifier:
 
 
 
-# Problem 6
 def prob6(n_neighbors, filename="mnist_subset.npz"):
     """Extract the data from the given file. Load a KNeighborsClassifier with
     the training data and the corresponding labels. Use the classifier to
@@ -274,4 +263,3 @@ def prob6(n_neighbors, filename="mnist_subset.npz"):
     # data set looks like 'on paper'
     # plt.imshow(X_test[0].reshape((28,28)),cmap="gray")
     # plt.show()
-    raise NotImplementedError("Problem 6 Incomplete")

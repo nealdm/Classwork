@@ -1,13 +1,8 @@
 # profiling.py
-"""Python Essentials: Profiling.
+"""Profiling.
 <Neal Munson>
-<Section 2>
 <1/8/2019>
 """
-
-# Note: for problems 1-4, you need only implement the second function listed.
-# For example, you need to write max_path_fast(), but keep max_path() unchanged
-# so you can do a before-and-after comparison.
 
 import numpy as np
 import math
@@ -15,7 +10,6 @@ from numba import jit
 import timeit
 from matplotlib import pyplot as plt
 
-# Problem 1
 def max_path(filename="triangle.txt"):
     """Find the maximum vertical path in a triangle of values."""
     with open(filename, 'r') as infile:
@@ -48,7 +42,6 @@ def max_path_fast(filename="triangle_large.txt"):
     return(data[0][0])
 
 
-# Problem 2
 def primes(N):
     """Compute the first N primes."""
     primes_list = []
@@ -86,8 +79,6 @@ def primes_fast(N):
         current += 2
     return primes_list
 
-
-# Problem 3
 def nearest_column(A, x):
     """Find the index of the column of A that is closest to x.
 
@@ -104,8 +95,8 @@ def nearest_column(A, x):
     return np.argmin(distances)
 
 def nearest_column_fast(A, x):
-    """Find the index of the column of A that is closest in norm to x.
-    Refrain from using any loops or list comprehensions.
+    """Find the index of the column of A that is closest in norm to x,
+    without using any loops or list comprehensions.
 
     Parameters:
         A ((m,n) ndarray)
@@ -119,8 +110,6 @@ def nearest_column_fast(A, x):
                                        # reshaping of the vector determines which direction
                                        # the vector is subtracted.
 
-
-# Problem 4
 def name_scores(filename="names.txt"):
     """Find the total of the name scores in the given file."""
     with open(filename, 'r') as infile:
@@ -156,7 +145,6 @@ def name_scores_fast(filename='names.txt'):
     return sum([(pos+1)*alphvals[names[pos]] for pos,name in enumerate(names)])
 
 
-# Problem 5
 def fibonacci():
     """Yield the terms of the Fibonacci sequence with F_1 = F_2 = 1."""
     x0 = 0
@@ -180,7 +168,6 @@ def fibonacci_digits(N=1000):
                         # indexed is one off of the way I have it indexed.
 
 
-# Problem 6
 def prime_sieve(N):
     """Yield all primes that are less than N."""
     ints = np.arange(2,N+1)
@@ -191,7 +178,6 @@ def prime_sieve(N):
         yield first
 
 
-# Problem 7
 def matrix_power(A, n):
     """Compute A^n, the n-th power of the matrix A."""
     product = A.copy()

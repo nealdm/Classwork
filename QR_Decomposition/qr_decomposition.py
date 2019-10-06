@@ -1,13 +1,12 @@
 # qr_decomposition.py
-"""Volume 1: The QR Decomposition.
+"""The QR Decomposition.
 <Neal Munson>
-<Section 2>
 <10/29/2018>
 """
 import numpy as np
 from scipy import linalg as la
 
-# Problem 1
+
 def qr_gram_schmidt(A):
     """Compute the reduced QR decomposition of A via Modified Gram-Schmidt.
 
@@ -29,9 +28,7 @@ def qr_gram_schmidt(A):
             Q[:,j] = Q[:,j]-R[i,j]*Q[:,i]    # orthogonalize the jth column of Q
     return Q,R
 
-    raise NotImplementedError("Problem 1 Incomplete")
 
-# Problem 2
 def abs_det(A):
     """Use the QR decomposition to efficiently compute the absolute value of
     the determinant of A.
@@ -44,10 +41,8 @@ def abs_det(A):
     """
     # takes the product of the diagonal of R from the QR factorization
     return np.prod(np.diag(qr_gram_schmidt(A)[1]))
-    raise NotImplementedError("Problem 2 Incomplete")
 
 
-# Problem 3
 def solve(A, b):
     """Use the QR decomposition to efficiently solve the system Ax = b.
 
@@ -69,12 +64,9 @@ def solve(A, b):
         for j in range(k+1,n):
             summation += R[k,j]*x[j]
         x[k] = (1/R[k,k])*(y[k] - summation)
-
     return x
-    raise NotImplementedError("Problem 3 Incomplete")
 
 
-# Problem 4
 def qr_householder(A):
     """Compute the full QR decomposition of A via Householder reflections.
 
@@ -96,10 +88,7 @@ def qr_householder(A):
         R[k:,k:] = R[k:,k:] - 2*np.outer(u,np.dot(u.T,R[k:,k:]))
         Q[k:,:] = Q[k:,:] - 2*np.outer(u,np.dot(u.T,Q[k:,:]))
     return Q.T, R
-    raise NotImplementedError("Problem 4 Incomplete")
 
-
-# Problem 5
 def hessenberg(A):
     """Compute the Hessenberg form H of A, along with the orthonormal matrix Q
     such that A = QHQ^T.
@@ -124,5 +113,3 @@ def hessenberg(A):
         H[:,k+1:] = H[:,k+1:] - 2*np.outer(np.dot(H[:,k+1:],u),u.T)
         Q[k+1:,:] = Q[k+1:,:] - 2*np.outer(u,np.dot(u.T,Q[k+1:,:]))
     return H, Q.T
-
-    raise NotImplementedError("Problem 5 Incomplete")

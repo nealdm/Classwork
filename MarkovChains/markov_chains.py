@@ -1,25 +1,21 @@
 # markov_chains.py
-"""Volume II: Markov Chains.
+"""Markov Chains.
 <Neal Munson>
-<Section 2>
-<November 2>
+<November 2, 2018>
 """
 
 import numpy as np
 from scipy import linalg as la
 
 
-# Problem 1
 def random_chain(n):
     """Create and return a transition matrix for a random Markov chain with
     'n' states. This should be stored as an nxn NumPy array.
     """
     A = np.random.random((n,n))
     return A/A.sum(axis=0)
-    raise NotImplementedError("Problem 1 Incomplete")
 
 
-# Problem 2
 def forecast(days):
     """Forecast 'day' number of days weather in the future given that today is hot.
     Returns a list with 'day' number of entries, indicating whether the day was
@@ -35,7 +31,6 @@ def forecast(days):
         weather = prediction[-1]
     return prediction # keep in mind the first day is on the left of the list
 
-# Problem 3
 def four_state_forecast(days):
     """Run a simulation for the weather over the specified number of days,
     with mild as the starting state, using the four-state Markov chain.
@@ -63,10 +58,8 @@ def four_state_forecast(days):
         weather = prediction[-1]
     return prediction # keep in mind the first day is on the left of the list
 
-    raise NotImplementedError("Problem 3 Incomplete")
 
 
-# Problem 4
 def steady_state(A, tol=1e-12, N=40):
     """Compute the steady state of the transition matrix A.
 
@@ -93,10 +86,8 @@ def steady_state(A, tol=1e-12, N=40):
             raise ValueError("A**k does not converge in {} steps.".format(N))
         x0 = x1
         k += 1
-    raise NotImplementedError("Problem 4 Incomplete")
 
 
-# Problems 5 and 6
 class SentenceGenerator(object):
     """Markov chain creator for simulating bad English.
 
@@ -143,7 +134,6 @@ class SentenceGenerator(object):
         self.tmat = self.tmat/self.tmat.sum(axis=0)
         self.stop_index = len(states) - 1
         return
-        raise NotImplementedError("Problem 5 Incomplete")
 
     def babble(self):
         """Begin at the start sate and use the strategy from
@@ -167,5 +157,3 @@ class SentenceGenerator(object):
         word_sentence.remove("$top")
         sentence = ' '.join(word_sentence)
         return sentence
-
-        raise NotImplementedError("Problem 6 Incomplete")
